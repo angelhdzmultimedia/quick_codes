@@ -1,0 +1,30 @@
+button {
+    background-color: blueviolet;
+    color: white;
+}
+
+#the-canvas {
+    width: auto;
+    height: auto;
+}
+
+textarea {
+    width: 50%;
+    height: 50%;
+}
+
+body, html {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+    height: 100%;
+    margin: 20px;
+}
+/* I hate CSS -_- */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-items: center;
+  
+}
