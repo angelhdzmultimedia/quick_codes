@@ -1,8 +1,4 @@
-async function loadSettings() {
-    const myFile = await fetch("data.json");
-    const json = await myFile.json();
-    return json.mySexyPDF;
-}
+
 
 //Controls
 const zoomIn = document.querySelector("#zoom-in-btn");
@@ -11,18 +7,19 @@ const next = document.querySelector("#next-btn");
 const prev = document.querySelector("#prev-btn");
 
 //Init
-let myFile;
+
 const viewer = new PDFViewer();
 
 async function init() {
-  myFile = await loadSettings();
   loadPDF();
 }
 
+
+
 async function loadPDF() {
-  const res = await fetch(myFile);
+  const res = await fetch(myPDFFile);
   const blob = await res.blob();
-  const file =  new File([blob], "myFile", { type: 'application/pdf' });
+  const file =  new File([blob], "myPDFFile", { type: 'application/pdf' });
   const url = URL.createObjectURL(file);
 
   viewer.load(url);
