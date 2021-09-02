@@ -1,0 +1,17 @@
+body, html {
+    background-color: #151515;
+    
+  }
+  
+  h4 {
+    color: #0ff;
+  }
+  
+  #file {
+    background-color: white;
+  }
+  
+  .my-card {
+    width: 100%;
+    max-width: 350px
+}

@@ -1,1 +1,45 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quasar@2.0.4/dist/quasar.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="q-pa-md">
+         <div class="q-gutter-md" style="max-width: 300px">
+           <h4>Load File</h4>
+         <q-file @change="change" id="file" outlined v-model="files">
+             <template v-slot:prepend>
+               <q-icon name="attach_file"></q-icon>
+             </template>
+           </q-file>
+           <h4>Base64 File Data</h4>
+           <q-card class="my-card">
+           <q-card-section horizontal style="height: 200px;">
+             <q-scroll-area  style="word-break: break-all; word-wrap: break-word;color: black;padding: 10px;margin: 10px;width: 100%; ">
+           
+                <div ref="output">
+                    {{file}}
+                </div>
+            
+         </q-scroll-area>
+     
+             <q-card-actions  class="justify-around">
+     
+               <q-btn @click="alert('Alert', 'Copied to clipboard.')"flat round color="primary" icon="share"></q-btn>
+             </q-card-actions>
+           </q-card-section>
+         </q-card>
+       </div></div>
+     </div>
+     <script src="https://unpkg.com/vue@next"></script>
+     <script src="https://cdn.jsdelivr.net/npm/quasar@2.0.4/dist/quasar.umd.prod.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
