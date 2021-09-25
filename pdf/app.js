@@ -1,4 +1,5 @@
-
+//Constants
+const PDF_FILE = "pdf_file.pdf";
 
 //Controls
 const zoomIn = document.querySelector("#zoom-in-btn");
@@ -11,18 +12,16 @@ const prev = document.querySelector("#prev-btn");
 const viewer = new PDFViewer();
 
 async function init() {
-  loadPDF();
+  try {
+    loadPDF();
+  } catch(e) {
+    //Ignore
+  }
 }
 
 
-
-async function loadPDF() {
-  const res = await fetch(myPDFFile);
-  const blob = await res.blob();
-  const file =  new File([blob], "myPDFFile", { type: 'application/pdf' });
-  const url = URL.createObjectURL(file);
-
-  viewer.load(url);
+function loadPDF() {
+  viewer.load(PDF_FILE);
   zoomIn.addEventListener("click", (e) => {
     viewer.zoomIn();
   });
